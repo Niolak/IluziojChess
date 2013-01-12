@@ -10,8 +10,8 @@ A simple chess game.
 Needs SFML 2.0 RC
 
 To build:
-	cmake .
-	make
+	`cmake .
+	make`
 
 To run:
-	bin/iluziojChess
+	`bin/iluziojChess`
