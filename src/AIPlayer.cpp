@@ -45,7 +45,7 @@ void AIPlayer::AIRec(int n, MovesTree* p_mt, int alpha, int beta) {
                             +(countBits(boardModel.whiteRook)-countBits(boardModel.blackRook))*50
                             +(countBits(boardModel.whiteQueen)-countBits(boardModel.blackQueen))*90;
 
-        if(boardModel.getCurrentPlayer()==BLACK) p_mt->m.score = -p_mt->m.score;
+        if(player==BLACK) p_mt->m.score = -p_mt->m.score;
     }
     else
     {
@@ -84,7 +84,7 @@ void AIPlayer::AIRec(int n, MovesTree* p_mt, int alpha, int beta) {
             }
         }
         if(p_mt->getSize()-impossibleMoves == 0 && (boardModel.isWhiteCheck()||boardModel.isBlackCheck())) {
-            p_mt->m.score = player*boardModel.getCurrentPlayer() * (2000+n);
+            p_mt->m.score = (boardModel.isWhiteCheck()?1:-1) * (2000+n);
         }
 
         //if(n!=lvl) p_mt->clear();
